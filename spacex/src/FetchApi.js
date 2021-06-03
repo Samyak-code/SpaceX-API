@@ -5,12 +5,12 @@ function FetchAPI() {
 
   //Get Method
   const apiGet = () => {
-    fetch('https://api.spacexdata.com/v3/launches/upcoming')
+    fetch('https://api.spacexdata.com/v4/launches/upcoming')
       .then((response) => response.json())
       .then((result) => {console.log(result);
       var i;
       for(i=0;i<result.length; i++){
-      document.write(result[i].mission_name+"\n"+"-"+result[i].details+"<br>"+"<br>")
+      document.write(result[i].name+"\n"+",\n"+"Flight number is "+result[i].flight_number+",\n"+"ID is "+result[i].id+"<br>"+"<br>")
       }
       });
       
